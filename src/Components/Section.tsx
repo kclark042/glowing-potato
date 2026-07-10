@@ -1,12 +1,23 @@
+type Styles = {
+    background: string
+    divider: string
+}
 
-const Section = () => {
+type SectionItems = {
+    title: string
+    styles: Styles
+}
+
+const Section = ({ title, styles }: SectionItems) => {
     return (
-        <div className="flex-col justify-items-center">
-            <h1 className="text-3xl font-bold ">
-                Tailwind is working!
+        <div className={`${styles.background} size-auto rounded-sm`}>
+            <h1 className="text-3xl font-bold">
+                {title}
             </h1>
-            <div className="bg-blue-600 w-lg h-screen ">hello world</div>
-            <div>testing</div>
+            <hr className={`h-2 ${styles.divider}`} />
+            <div className="">hello world</div>
+
+
         </div>
     )
 }
